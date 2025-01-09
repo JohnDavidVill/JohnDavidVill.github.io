@@ -72,7 +72,7 @@ search                   : # true, false (default)
 search_full_content      : # true, false (default)
 search_provider          : # lunr (default), algolia, google
 lunr:
-  search_within_pages    : # true, false (default)
+  search_within_pages    : #true #, false (default)
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -114,10 +114,10 @@ analytics:
 # Site Author
 author:
   name             : "John David Villarreal"
-  avatar           : "/assets/images/bio-photo.jpg"
+  avatar           : #"/assets/images/bio-photo.jpeg"
   bio              : "I am an **amazing** person."
   location         : "Houston, TX"
-  email            :
+  email            : "johndavidvill02@gmail.com"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -315,7 +315,7 @@ defaults:
   # _posts
   - scope:
       path: ""
-      type: splash
+      type: home
     values:
       layout: single
       author_profile: true
