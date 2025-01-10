@@ -5,7 +5,7 @@ layout: splash
 <h1 align="center">Automated Biosensor Printer</h1>
 <h6 align="center"><i>Senior Design Capstone: Team Pressign Matters</i></h6>
 <br>
-<p>The Sempionatto Research Group develops wearable biosensors that collect and analyze sweat, 
+<p>The <a href="https://jsempgroup.rice.edu">Sempionatto Research Group</a> develops wearable biosensors that collect and analyze sweat, 
 blood, and other biofluids to monitor the wearer’s health. These wearable sensors must be 
 flexible and thus are made by screen printing the electrode design with a conductive ink. 
 Since existing screen-printing machines are bulky and expensive, the electrodes used in 
@@ -15,7 +15,35 @@ that automates this process while minimizing wasted ink. The mid-semester checkp
 summarizes the work can be found at the bottom of the page.</p>
 
 <h2>Personal Contributions</h2>
-<p></p>
+<h3>Printed Circuit Board</h3>
+<p>
+  I independently designed and developed a printed circuit board (PCB) that utilizes various 
+  circuit components and devices to control the automated printer. The PCB is a 4-layer board 
+  that incorporates signal layers, a power plane, and a ground plane. The board incorporates 
+  a Teensy 4.1 Microcontroller, which is able to drive the motors on the printer and manage 
+  the user-interface. Additionally, the PCB contains various anti-electromagnetic interference 
+  (EMI) and noise protection features, such as bypass capacitors and a dedicated ground 
+  plane. Onboard Screw Terminals and Header Pins allow for the PCB to interface with external 
+  systems such as the motors and user-interface.
+
+</p>
+<div style="text-align: center;">
+  <img src="/assets/images/total-board-layout.png" alt="Forest" width="450" height="300">
+</div>
+
+<h3>Electronics Undercarriage</h3>
+<p>
+  I configured the layout of the Electronics Undercarriage, which is the plexiglass sheet used 
+  to house the motor drivers and power supply, to maximize usable space while still remaining 
+  under the allotted spatial design constraints. The configuration contains four motor drivers 
+  - used to control the motors based on microcontroller input - that I specifically selected 
+  for the motor driver’s high precision as well as for features such as opto-isolation and 
+  differential signaling.
+</p>
+
+<div style="text-align: center;">
+  <img src="/assets/images/electronics-undercarriage.png" alt="Mountains" width="450" height="300">
+</div>
 
 <h2>Meet the Team!</h2>
 
