@@ -6,341 +6,198 @@ layout: splash
 This is a collection of the projects - as well as the research and work - I have done in engineering and science over the course of my
 academic and professional careers.
 
-<h2>Engineering Projects</h2>
-<head>
-  <style>
-  div.gallery {
-    border: 1px solid #ccc;
+<style>
+  body {
+    background: var(--bg);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 2rem;
   }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
+
+  h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
   }
-  
-  div.gallery img {
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+  }
+
+  .card img {
     width: 100%;
-    height: auto;
+    height: 200px;              /* consistent image height */
+    object-fit: cover;          /* crop to fill nicely */
+    display: block;
   }
-  
-  div.desc {
-    padding: 15px;
+
+  .card p {
+    margin: 0;
+    padding: 0.8rem 1rem;
+    font-weight: 600;
     text-align: center;
+    color: var(--text);
   }
-  
-  * {
-    box-sizing: border-box;
+
+  .card a {
+    display: block;
+    text-decoration: underline;
+    color: var(--text);
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    transition: color .2s ease;
   }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
+  .card a:hover {
+    color: var(--accent);
   }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
+
+</style>
+</head>
+<body>
+
+<h2 align="center">Featured</h2>
+<div class="grid">
+  <div class="card">
+    <img src="/assets/images/bio-printer.png" alt="Automated Biosensor Screen Printer">
+    <a href="/_pages/projects/bio-printer/">Automated Biosensor Printer</a>
+  </div>
+
+  <div class="card">
+    <img src="/assets/images/sm83.png" alt="SM83 Verilog CPU">
+     <a href="/_pages/projects/sm83/">SM83 Verilog CPU</a>
+  </div>
+
+  <div class="card">
+    <img src="/assets/images/total-board-layout.png" alt="PCB Board and HyperLynx Mini-Projects">
+     <a href="/_pages/projects/eaglehyperlynx/">PCB Boards and HyperLynx Mini-Projects</a>
+  </div>
+
+  <div class="card">
+    <img src="/assets/images/ltspice.png" alt="SPICE Mini-Projects">
+     <a href="/_pages/projects/spice/">SPICE Mini-Projects</a>
+  </div>
+</div>
+
+</body>
+
+<h2>Other Projects, Publications, and Research</h2>
+
+  <style>
+    
+    article.pub{
+      display:grid;
+      grid-template-columns: 220px 1fr; /* image | text | year */
+      gap:22px;
+      align-items:center;
+      padding:18px;
+      margin:24px 0;
+      border-radius:10px;
     }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
+
+    /* Thumbnail sizing (uniform + cropped neatly) */
+    .pub .thumb{
+      width:100%;
+      aspect-ratio:16 / 10; /* consistent thumbnail shape */
+      object-fit:contain;     /* crop instead of distorting */
+      border-radius:5px;
+      display:block;        /* removes inline img baseline gap */
     }
+
+    /* Text area */
+    .pub .meta{ display:flex; flex-direction:column; gap:10px; min-width:0; }
+    .pub .title{ font:700 clamp(18px,2.4vw,26px)/1.25 ui-sans-serif,system-ui; margin:0; }
+
+    .card a {
+    display: block;
+    text-decoration: underline;
+    color: var(--text);
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    transition: color .2s ease;
   }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+  .card a:hover {
+    color: var(--accent);
   }
   </style>
-  </head>
-  <body>
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a href="/_pages/projects/bio-printer">
-        <img src="/assets/images/bio-printer.png" alt="Bio Printer" width="600" height="400">
-      </a>
-      <div class="desc">Automated Biosensor Screen Printer</div>
-    </div>
+<article class="pub">
+  <img class="thumb" src="/assets/images/rrc.png" alt="Rice Robotics: Catbot Robot Research">
+  <div class="meta">
+    <a href="/_pages/projects/catbot"><h2 class="title">Rice Robotics Club: Catbot Robot Research</h2></a>
+    The Rice Robotics Club
   </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/catbot">
-        <img src="/assets/images/rrc.png" alt="Northern Lights" width="600" height="400">
-      </a>
-      <div class="desc">Rice Robotics Club: Catbot Robot Research</div>
-    </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/dismount.png" alt="Dismount Zone">
+  <div class="meta">
+    <a href="/_pages/projects/dismount"><h2 class="title">Rice University Dismount Zone Alert System</h2></a>
+    The Rice Robotics Club
   </div>
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/dismount">
-        <img src="/assets/images/dismount.png" alt="Mountains" width="600" height="400">
-      </a>
-      <div class="desc">Rice University Dismount Zone Alert System</div>
-    </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/riscv.png" alt="RISC-V">
+  <div class="meta">
+    <a href="/_pages/projects/riscv-linux"><h2 class="title">Linux and RISC-V Open Source Benefits</h2></a>
+    The Rice Robotics Club
   </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/riscv.jpg" alt="RISC-V">
+  <div class="meta">
+    <a href="/_pages/projects/rvr"><h2 class="title">RISC-V at Rice</h2></a>
+    The Rice Robotics Club
   </div>
-  
-  </body>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/amd-logo.jpeg" alt="AMD">
+  <div class="meta">
+    <a href="/_pages/projects/slt"><h2 class="title">AMD: Systems Level Testing</h2></a>
+    The Rice Robotics Club
+  </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/riceece_logo.jpeg" alt="RICE ECE">
+  <div class="meta">
+    <a href="/_pages/projects/lab-design"><h2 class="title">Fundamentals of Computer Engineering Lab Design</h2></a>
+    The Rice Robotics Club
+  </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/linux.png" alt="Linux">
+  <div class="meta">
+    <a href="/_pages/projects/home-server"><h2 class="title">Linux Home Server</h2></a>
+    The Rice Robotics Club
+  </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/ev3.jpg" alt="Linux">
+  <div class="meta">
+    <a href="/_pages/projects/ev3"><h2 class="title">(Educational Resources) Lego EV3 Robotics Presentations</h2></a>
+    The Rice Robotics Club
+  </div>
+</article>
 
-<h2>Research Projects</h2>
-<head>
-  <style>
-  div.gallery {
-    border: 1px solid #ccc;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  </style>
-  </head>
-  <body>
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/riscv-linux">
-        <img src="/assets/images/riscv.png" alt="Bio Printer" width="600" height="400">
-      </a>
-      <div class="desc">Linux and RISC-V Open Source Benefits</div>
-    </div>
-  </div>
-  
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/rvr">
-        <img src="/assets/images/riscv.jpg" alt="Forest" width="600" height="400">
-      </a>
-      <div class="desc">RISC-V at Rice</div>
-    </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
-  </div>
-  
-  </body>
-
-
-<h2>Professional and Academic Projects</h2>
-<head>
-  <style>
-  div.gallery {
-    border: 1px solid #ccc;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
-  div.gallery img {
-    width: 100%;
-    height: auto;
-  }
-  
-  div.desc {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  .responsive {
-    padding: 0 6px;
-    float: left;
-    width: 24.99999%;
-  }
-  
-  @media only screen and (max-width: 700px) {
-    .responsive {
-      width: 49.99999%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    .responsive {
-      width: 100%;
-    }
-  }
-  
-  .clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  </style>
-  </head>
-  <body>
-  
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/slt">
-        <img src="/assets/images/amd-logo.jpeg" alt="Mountains" width="600" height="400">
-      </a>
-      <div class="desc">AMD: Systems Level Testing</div>
-    </div>
-  </div>
-
-  <div class="responsive">
-    <div class="gallery">
-      <a  href="/_pages/projects/lab-design">
-        <img src="/assets/images/riceece_logo.jpeg" alt="Forest" width="600" height="400">
-      </a>
-      <div class="desc">Fundamentals of Computer Engineering Lab Design</div>
-    </div>
-  </div>
-  
-  <div class="clearfix"></div>
-  
-  <div style="padding:6px;">
-  </div>
-  
-  </body>
-
-  <h2>Personal Projects</h2>
-  <head>
-    <style>
-    div.gallery {
-      border: 1px solid #ccc;
-    }
-    
-    div.gallery:hover {
-      border: 1px solid #777;
-    }
-    
-    div.gallery img {
-      width: 100%;
-      height: auto;
-    }
-    
-    div.desc {
-      padding: 15px;
-      text-align: center;
-    }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    .responsive {
-      padding: 0 6px;
-      float: left;
-      width: 24.99999%;
-    }
-    
-    @media only screen and (max-width: 700px) {
-      .responsive {
-        width: 49.99999%;
-        margin: 6px 0;
-      }
-    }
-    
-    @media only screen and (max-width: 500px) {
-      .responsive {
-        width: 100%;
-      }
-    }
-    
-    .clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    </style>
-    </head>
-    <body>
-    
-    <div class="responsive">
-      <div class="gallery">
-        <a  href="/_pages/projects/home-server">
-          <img src="/assets/images/linux.png" alt="Bio Printer" width="600" height="400">
-        </a>
-        <div class="desc">Linux Home Server</div>
-      </div>
-    </div>
-    
-    <div class="responsive">
-      <div class="gallery">
-        <a  href="/_pages/projects/ev3">
-          <img src="/assets/images/ev3.jpg" alt="Mountains" width="600" height="400">
-        </a>
-        <div class="desc">(Resource) Lego EV3 Robotics Presentations</div>
-      </div>
-    </div>
-    
-    <div class="clearfix"></div>
-    
-    <div style="padding:6px;">
-    </div>
-    
-    </body>
   
 <h2>Certifications</h2>
 
 <head>
   <style>
-  div.gallery {
-    border: 1px solid #ccc;
-  }
-  
-  div.gallery:hover {
-    border: 1px solid #777;
-  }
-  
+
   div.gallery img {
     width: 100%;
     height: auto;
