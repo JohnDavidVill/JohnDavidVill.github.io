@@ -2,4 +2,73 @@
 layout: splash
 ---
 
-This page is under construction. Check back soon for updates!
+  <style>
+    
+    article.pub{
+      display:grid;
+      grid-template-columns: 500px 1fr; /* image | text | year */
+      gap:22px;
+      align-items:center;
+      padding:18px;
+      margin:24px 0;
+      border-radius:10px;
+    }
+
+    /* Thumbnail sizing (uniform + cropped neatly) */
+    .pub .thumb{
+      width:100%;
+      aspect-ratio:16 / 10; /* consistent thumbnail shape */
+      object-fit:contain;     /* crop instead of distorting */
+      border-radius:5px;
+      display:block;        /* removes inline img baseline gap */
+    }
+
+    /* Text area */
+    .pub .meta{ display:flex; flex-direction:column; gap:10px; min-width:0; }
+    .pub .title{ font:700 clamp(18px,2.4vw,26px)/1.25 ui-sans-serif,system-ui; margin:0; }
+
+  /* card-specific CTA buttons should be block; keep regular inline links unchanged */
+  .card a {
+    display: block;
+    text-decoration: underline;
+    color: var(--text);
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    transition: color .2s ease;
+  }
+  .card a:hover { color: var(--accent); }
+
+  /* links inside article.pub meta should remain inline */
+  .pub .meta a { display: inline; padding:0; font-weight:600; }
+  </style>
+<article class="pub">
+  <img class="thumb" src="/assets/images/spice/vco/vco.png" alt="LTSpice VCO">
+  <div class="meta">
+    <h2 class="title">LTC6990 Voltage Controlled Oscillator</h2>
+    <p>
+    The VCO circuit shown here is based off of the LTC6990 IC from Analog Devices. 
+    The topology of this specific VCO with it's component values allows for a frequency 
+    range of ~50kHz to 1000kHz. The frequency is controlled by an input voltage ranging 
+    from 0V to 2V. This circuit was simulated in LTSpice at various control voltages to 
+    determine the output frequency. The resulting waveforms are:
+    <a href="/assets/images/spice/vco/vco_0v.png" target="_blank">Vctrl = 0V</a>, 
+    <a href="/assets/images/spice/vco/vco_1v.png" target="_blank">Vctrl = 1V</a>, 
+    <a href="/assets/images/spice/vco/vco_2v.png" target="_blank">Vctrl = 2V</a>.
+    </p>
+  </div>
+</article>
+<article class="pub">
+  <img class="thumb" src="/assets/images/spice/phase_detector/phasedetector.png" alt="Phase Detector Circuit">
+  <div class="meta">
+    <h2 class="title">Phase Detector Circuit</h2>
+    <p>
+    This phase detector takes in two square wave inputs and outputs a set of short pulses where the two 
+    inputs differ in phase. As shown in the circuit schematic, one of the square wave inputs is delayed 
+    behind the other, thus allowing the phase detector circuit to output the different in phase as a 
+    pulse train. This circuit was simulated in LTSpice to verify the circuit works as intended, and the 
+    simulated wave form is as follows:
+    <a href="/assets/images/spice/phase_detector/phaseout.png" target="_blank">Phase Detector Output</a>.
+    </p>
+  </div>
+</article>
