@@ -1,0 +1,64 @@
+---
+layout: splash
+---
+<h1 align="center">Automated Biosensor Printer Printed Circuit Board Design Retrospective</h1>
+<p>
+This project is a retrospective analysis of the PCB design I created for my Senior Design project. My main goal 
+is to identify key areas of improvement in my PCB design skills by analyzing the signal integrity of the traces I designed 
+using HyperLynx. The image below shows the HyperLynx Board Layout of the Automated Biosensor Printer PCB that 
+I exported from EAGLE.
+</p>
+<img src="/assets/images/pcb/seniordesign/hyperlynx_circuit.png/" alt="HyperLynx Board" style="width:100%;max-width:500px;display:block;margin-left:auto;margin-right:auto;"/>
+<style>
+    
+    article.pub{
+      display:grid;
+      grid-template-columns: 500px 1fr; /* image | text | year */
+      gap:22px;
+      align-items:center;
+      padding:18px;
+      margin:24px 0;
+      border-radius:10px;
+    }
+
+    /* Thumbnail sizing (uniform + cropped neatly) */
+    .pub .thumb{
+      width:100%;
+      aspect-ratio:16 / 10; /* consistent thumbnail shape */
+      object-fit:contain;     /* crop instead of distorting */
+      border-radius:5px;
+      display:block;        /* removes inline img baseline gap */
+    }
+
+    /* Text area */
+    .pub .meta{ display:flex; flex-direction:column; gap:10px; min-width:0; }
+    .pub .title{ font:700 clamp(18px,2.4vw,26px)/1.25 ui-sans-serif,system-ui; margin:0; }
+
+  /* card-specific CTA buttons should be block; keep regular inline links unchanged */
+  .card a {
+    display: block;
+    text-decoration: underline;
+    color: var(--text);
+    padding: 0.8rem 1rem;
+    text-align: center;
+    font-weight: 600;
+    transition: color .2s ease;
+  }
+  .card a:hover { color: var(--accent); }
+
+  /* links inside article.pub meta should remain inline */
+  .pub .meta a { display: inline; padding:0; font-weight:600; }
+  </style>
+<article class="pub">
+  <img class="thumb" src="/assets/images/pcb/seniordesign/example_sig_trace.png" alt="Signal Trace Oscilloscope">
+  <div class="meta">
+    <h2 class="title">Signal Integrity and Analysis</h2>
+    <p>
+    This image shows the oscilloscope reading of a randomly chosen signal trace from the Automated Biosensor Printer PCB. 
+    The input signal is a 50MHz square wave, and the output signal is shown to have significant ringing. The main cause 
+    of this ringing is most likely due to impedance mismatches along the trace. To improve the signal integrity of this 
+    trace (and all others on the PCB), I would need to ensure that the impedances at the source and load ends of each 
+    trace match.
+    </p>
+  </div>
+</article>
