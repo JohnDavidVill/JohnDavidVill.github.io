@@ -1,0 +1,142 @@
+---
+layout: splash
+---
+<style>
+.cent {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.fraction {
+  display: inline-block;
+  vertical-align: middle; 
+  margin: 0 0.2em 0.4ex;
+  text-align: center;
+  & > span{
+    display: block;
+    padding-top: 0.15em;
+  }
+  & span{
+    &.fdn{
+      border-top: thin solid white;
+      
+    }
+    &.bar{
+      display: none;
+    }
+  }
+}
+.credit {
+    font-size: x-small;
+}
+</style>
+
+<br>
+<h1 align="center">ELEC 244 Lab 2</h1>
+A major characteristic of Op-Amps is their Slew Rate. The Slew Rate of an Op-Amp is the 
+maximum rate of change of the output voltage with respect to time. I.e.
+
+<div class="cent">
+<div class="eq-c">
+ Slew Rate = max(
+  <div class="fraction">
+  <span class="fup">dV<sub>out</sub></span>
+  <span class="bar">/</span>
+  <span class="fdn">dt</span>
+  </div>
+ )
+</div>
+</div>
+<br>
+
+<h2>Why Slew Rate is Important</h2>
+Slew Rate is an important parameter in circuit design. If your circuit operates at high frequencies, 
+you need to use an Op-Amp whose Slew Rate is rated above the frequency and amplitude you plan to use. 
+For sinusoidal signals, your signal must satisfy the following condition to avoid Sine Wave Distortion:
+
+<div class="cent">
+    <div class="eq-c">
+        Slew Rate ≥ 2πfV<sub>p</sub>
+    </div>
+</div>
+
+Where f is the maximum frequency you plan to work with and V<sub>p</sub> is the Peak Voltage.
+
+<h2>Why Op-Amps have a Slew Rate</h2>
+Slew Rate can be understood by looking at the internal circuitry of the Op-Amp. If you look at the 
+Functional Block Diagram of the LM741, you will notice that there is a 30pF capacitor (C1) within the circuit. 
+This capacitor is known as the Compensation Capacitor. 
+<br>
+<div style="text-align: center;">
+<img src="/assets/images/elec244/Lm741func.png" alt="LM741 Function Block Diagram" width="700" height="700">
+</div>
+<div class="credit" style="text-align: center;">TI LM741 Datasheet: https://www.ti.com/lit/ds/symlink/lm741.pdf</div>
+
+<br>
+This capacitor affects the area around it, and is one of the main causes of Slewing. If you have not buried 
+the trauma of ELEC 241 or PHYS 102, you’ll remember that the current of a capacitor is given by:
+
+<div class="cent">
+<div class="eq-c">
+ I = C
+  <div class="fraction">
+  <span class="fup">dV</span>
+  <span class="bar">/</span>
+  <span class="fdn">dt</span>
+  </div>
+</div>
+</div>
+
+If we rearrange the equation, we get the Slew Rate equation we defined above in terms of Output Current and Capacitance:
+
+<div class="cent">
+<div class="eq-c">
+  <div class="fraction">
+  <span class="fup">dV</span>
+  <span class="bar">/</span>
+  <span class="fdn">dt</span>
+  </div>
+ =
+  <div class="fraction">
+  <span class="fup">I</span>
+  <span class="bar">/</span>
+  <span class="fdn">C</span>
+  </div>
+</div>
+</div>
+
+This equation can be rearranged to:
+
+<div class="cent">
+<div class="eq-c">
+  dt
+ =
+  <div class="fraction">
+  <span class="fup">C</span>
+  <span class="bar">/</span>
+  <span class="fdn">I</span>
+  </div>
+  dV
+</div>
+</div>
+
+And when integrated, the result becomes:
+
+<div class="cent">
+<div class="eq-c">
+  Δt
+ =
+  <div class="fraction">
+  <span class="fup">CΔV</span>
+  <span class="bar">/</span>
+  <span class="fdn">I</span>
+  </div>
+  dV
+</div>
+</div>
+
+Since C and ΔV are fixed, and I is the maximum current, there is a minimum time it takes for the Capacitor 
+Voltage to change by ΔV. This is one of the main reasons as to why the change in the Output Voltage of the 
+Op-Amp is limited as it is restricted by the time its internal circuitry can change voltage.
+<br>
+<a href="https://youtube.com/shorts/KeEmAvuCdrA?si=-XEyuH_gH_4HHjn7">ELEC244_LAB2_SOLUTION_S26.pdf</a>
+
