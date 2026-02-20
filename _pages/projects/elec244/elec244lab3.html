@@ -1,4 +1,63 @@
 ---
 layout: splash
 ---
-This page is under construction.
+<style>
+    .figure {
+        font-size: medium;
+    }
+    .credit {
+    font-size: x-small;
+}
+</style>
+<br>
+<h1 style="text-align: center;">Lab 3: Amplifiers</h1>
+Amplification is an important part of Electrical Engineering. Amplifiers are useful when 
+dealing with small signals. There are various types of amplifiers that are used for 
+various purposes. In this lab, you will explore Class B and Class AB Amplifiers.
+
+<h2>Class B Amplifiers</h2>
+Class B Amplifiers utilize two transistors. These transistors are an NPN and PNP 
+Bipolar Junction Transistors (BJT). The transistors used in this lab are the 2N3904 
+NPN and 2N3906 PNP transistors. As shown in the circuit diagram in Figure 1, the collector 
+of the NPN transistor is connected to +5 V, and the collector of the PNP transistor is 
+connected to -5V. The bases of the transistors are wired together, and they connect to the 
+input signal. The emitters of the transistors are wired together to form the output of the 
+circuit. Note that for the purpose of the lab, the speaker has been swapped out for a resistor 
+connected to ground.
+<br>
+<br>
+<div style="text-align: center;">
+<img src="/assets/images/elec244/lab3/ClassB.png" alt="Class B Amplifier" width="500" height="500">
+</div>
+<div class="figure" style="text-align: center;">Figure 1: Class B Amplifier</div>
+<div class="credit" style="text-align: center;">Modified, Horrowitz & Hill. The Art of Electronics, 3rd ed. (2015)</div>
+<br>
+The NPN transistor amplifies the positive part of the input signal, and the PNP transistor 
+amplifies the negative part of the signal; however, the transistors do not perfectly amplify 
+the input signal. As you can see in Figure 2, the output signal is zero near the zero-crossings 
+of the input signal. This effect is known as the Crossover Distortion
+<br>
+<br>
+<div style="text-align: center;">
+<img src="/assets/images/elec244/lab3/CrossoverDist.png" alt="Crossover Distortion" width="500" height="500">
+</div>
+<div class="figure" style="text-align: center;">Figure 2: Crossover Distortion</div>
+<div class="credit" style="text-align: center;">Modified, Horrowitz & Hill. The Art of Electronics, 3rd ed. (2015)</div>
+<br>
+Crossover Distortion occurs because BJT transistors require the Base-Emitter Junction to be 
+Forward Biased by some voltage. This voltage is known as the Base-Emitter Voltage, V_BE. 
+According to the datasheets for the 2N3904 NPN and 2N3906 transistors, conduction occurs when 
+they are Forward Biased by 0.65 V. For the NPN transistor, this conduction occurs when the 
+base is 0.65 V above the emitter, and for the PNP transistor, conduction occurs when the emitter 
+is 0.65 V above the base. When the magnitude of the voltage drops below the V_BE, the transistor 
+will Cut-Off and will pass a negligible current. This prevents the flow of current at this voltage 
+level, which is why the transistors in the Class B amplifier topology have a flattened output 
+voltage near zero crossings.
+<br>
+<br>
+<a href="https://youtu.be/Q23_LCri1Kw?si=XRZ4mgMrSw0Dw2NZ&t=3604" target="_blank">ELEC244 Lab 3 Solution Guide (2).pdf</a>
+<div class="figure">
+    <h3>References</h3><br>
+    <a href="https://cdn.sparkfun.com/assets/7/9/2/7/6/2N3904.pdf">2N3904 NPN Transistor Datasheet</a><br>
+    <a href="https://cdn.sparkfun.com/assets/8/a/3/4/1/2N3906.pdf">2N3906 PNP Transistor Datasheet</a>
+</div>
