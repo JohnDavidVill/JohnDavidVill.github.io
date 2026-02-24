@@ -1,0 +1,48 @@
+---
+layout: splash
+---
+<style>
+    .credit {
+    font-size: x-small;
+}
+</style>
+
+<h1 style="text-align: center;">Voltage Regulation</h1>
+
+Voltage Regulation is an important part in power design for electronic circuits as 
+regulators are able to stabilize the voltage the circuits receive. This is especially 
+important in high precision circuits where a stable power source is necessary for the 
+circuit to operate properly. Voltage Regulators maintain a steady DC voltage within the 
+regulator’s operating range.
+
+
+<h2>Building a Voltage Regulator</h2>
+Figure 1 shows the Voltage Regulator Circuit that is constructed in Lab 4. The key elements 
+of the circuit are resistors, Bipolar Junction Transistors (BJT), a Zener Diode, and an Op-Amp. 
+These components are connected in a specific topology to create the Voltage Regulator.
+<br>
+<div style="text-align: center;">
+<img src="/assets/images/elec244/lab4/voltageReg.png" alt="Voltage Regulator Circuit" width="500" height="500">
+<br>
+Figure 1: Voltage Regulator Circuit
+<div class="credit">Dr. Joseph Young</div>
+</div>
+<h3>Reference Voltage</h3>
+The Zener Diode is used to create a reference voltage. As noted in Horowitz and Hill’s The 
+Art of Electronics<sup>1</sup>, “When [a zener diode is] connected in parallel with a variable 
+voltage source so that it is reverse biased, a Zener diode conducts when the voltage reaches the 
+diode's reverse breakdown voltage. From that point on, the low impedance of the diode keeps the 
+voltage across the diode at that value.” The Zener Diode in Figure 1 is in parallel with the 
+rest of the circuit, meaning that the diode is providing a reference for the Op-Amp and BJTs to use. 
+According to the 1N5226 Zener Diode Datasheet<sup>2</sup>, the zener diode that is used in this 
+circuit has a nominal Zener (Breakdown) Voltage of 3.3V at 20 mA. While this value differs from what 
+is found in practice, it dictates the reference voltage for the rest of the circuit. It is important 
+to note that Zener Diodes often require a bias current. In the circuit diagram shown in Figure 1, the 
+R3, 10 kΩ resistor is required to put the Zener Diode in breakdown mode.
+
+The rest of this section is under construction. Check back soon for updates!
+
+<h2>References</h2>
+1) Horowitz, Paul; Hill, Winfield (1989). The Art of Electronics(2nd ed.). Cambridge University Press. pp. 68–69. ISBN 0-521-37095-7.
+<br>
+2) https://www.futurlec.com/Diodes/1N5226.shtml
