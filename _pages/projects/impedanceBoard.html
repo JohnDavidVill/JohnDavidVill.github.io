@@ -1,13 +1,14 @@
 ---
 layout: splash
 ---
-<h1>Impedance Matching Test Board</h1>
+<h1 style="text-align: center;">Impedance Matching Test Board</h1>
 My personal goal for this project was to learn how to use Altium EDA to design a Printed Circuit 
 Board (PCB) whose traces are Impedance matched. This project was originally created as part of a 
 class project, but I extended the scope of the project by designing the board using Altium’s 
 Impedance Profile Tool. The purpose of the project was to route two differential pair wires on a 6 
 Layer PCB. The two differential pair wires would go between two different signal layers. Another 
 goal of the project was to test the PCB differential wires using HyperLynx SI/PI. 
+<br>
 <br>
 The following were the major constraints of the project:
 <ul>
@@ -17,20 +18,28 @@ The following were the major constraints of the project:
     <li>The total wire length for each differential pair wire must be 6 inches</li>
     <li>Maximum undershoot and overshoot of 140 mV</li>
 </ul>
+<br>
 Pictured below in Figure 1 is the PCB. The two differential pairs were intentionally designed to be 
 perpendicular to prevent any electromagnetic interference between the two pairs.
 
-<img src="/assets/images/impedanceBoard/layout.png" alt="Impedance Board" width="500" height="500">
+<div style="text-align: center;">
+<img src="/assets/images/impedanceBoard/layout.png" alt="Impedance Board" width="500" height="500"><br>
+Figure 1: PCB Layout <br>
+</div>
 
 Pictured below in Figure 2 is the Altium Impedance Profile. The profile was manually created around the 
 OSHPark guidelines.
 
-<img src="/assets/images/impedanceBoard/impProfile.png" alt="Impedance Profile" width="500" height="500">
-
+<div style="text-align: center;">
+<img src="/assets/images/impedanceBoard/impProfile.png" alt="Impedance Profile" width="500" height="500"><br>
+Figure 2: Altium Impedance Profile<br>
+</div>
 Pictured below in Figure 3 is the Altium Via Profile.
 
-<img src="/assets/images/impedanceBoard/via.png" alt="Via Profile" width="500" height="500">
-
+<div style="text-align: center;">
+<img src="/assets/images/impedanceBoard/via.png" alt="Via Profile" width="500" height="500"><br>
+Figure 3: Altium Via Profile<br>
+</div>
 The following design considerations were taken into account.
 <ul>
     <li>Perpendicular signal wires across layers to minimize crosstalk</li>
@@ -39,8 +48,17 @@ The following design considerations were taken into account.
 </ul>
 
 Figures 4 and 5 show the 2-D Electromagnetic Fields.
-<img src="/assets/images/impedanceBoard/layer3.png" alt="Layer 3 Field" width="500" height="500">
-<img src="/assets/images/impedanceBoard/layer5.png" alt="Layer 5 Field" width="500" height="500">
-
+<div style="text-align: center;">
+<img src="/assets/images/impedanceBoard/layer3.png" alt="Layer 3 Field" width="500" height="500"><br>
+Figure 4: Layer 3 Electromagnetic Field<br>
+<img src="/assets/images/impedanceBoard/layer5.png" alt="Layer 5 Field" width="500" height="500"><br>
+Figure 5: Layer 5 Electromagnetic Field<br>
+</div>
+<br>
+<br>
 The following slides were used as the submission for the class project. The slides detail the design 
 choices from the PCB and explain the HyperLynx simulation results.
+<br>
+<div style="text-align: center;">
+<iframe src="https://drive.google.com/file/d/1GZlvZS8TEzWpC5An1RsLL1f-h0ko6m_l/preview" width="800" height="600"></iframe>
+</div>

@@ -1,5 +1,25 @@
 ---
 layout: splash
 ---
+<h1 style="text-align: center;">SM83 CPU Design</h1>
+The SM83 CPU is the CPU found on the Nintendo Game Boy and Game Boy Color. The goal of this project 
+is to reverse-engineer the SM83 CPU in Verilog to execute binaries in the SM83 Instruction Set 
+Architecture (ISA). This project is a side project that I am working on to learn more about 
+Computer Architecture and design.
+<br>
+<br>
+Figure 1 shows the SM83 ISA that is being used to reverse-engineer the CPU.
+<br>
+<br>
+<div style="text-align: center;">
+<img src="/assets/images/sm83ISA.png" alt="SM83 ISA" width="850" height="850"><br>
+Figure 1: SM83 ISA<br>
+<div style="font-size: xx-small;">https://gbdev.io/gb-opcodes/optables/</div>
+</div>
+<br>
 
-This page is under construction. Check back soon for updates!
+The SM83 is a CISC CPU. For my implementation, a Finite State Machine (FSM) will be implemented in 
+Verilog for the Control Unit to handle the multi-cycle operations. The Control Unit will consist of 
+sequential logic that will utilize the combinational logic of the CPU decoder.
+<br>
+Check back soon for more updates!
