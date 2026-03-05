@@ -64,7 +64,7 @@ to note that Zener Diodes often require a bias current. In the circuit diagram s
 R3, 10 kΩ resistor is required to put the Zener Diode in breakdown mode.
 <br>
 <h3>Error Amplifier</h3>
-The Op-Amp topology is an Error Amplifier. An error amplifier (as the name suggests) amplifies 
+The Op-Amp topology shown in Figure 1 is an Error Amplifier. An error amplifier (as the name suggests) amplifies 
 the error (difference) between the non-inverting and inverting input. The op-amp itself wants to keep 
 the voltage between the two inputs. The non-inverting input of the op-amp is the reference voltage of 
 the zener diode divided down by R1 and R2. The inverting input is the feedback from the op-amps output. 
@@ -93,12 +93,46 @@ V<sub>out</sub> = (V<sub>Zener</sub>)(R1 and R2 Network)(1+
 </div>
 </div>
 <br>
+
+<h3>Transistors</h3>
+The transistors on the right side of Figure 1 form a Darlington Pair, which is used to amplify the 
+output of the op-amp in this circuit. A NPN Darlington Pair is created when the emitter of the first 
+transistor is connected to the base of the second transistor. As BJTs are current driven devices, the 
+Darlington Pair will amplify the input current. Each transistor in the pair will have some 
+amplification coefficient given how the transistor is used in the circuit. This coefficient, h<sub>FE</sub> 
+(β is also commonly used), is used to describe how much the transistor amplifies the current from 
+the input to the output. When the BJT is has a more positive collector than emitter, has base-emitter 
+and base-collector junctions that behave like diodes, and falls within standard operating range,<sup>3</sup> 
+the individual transistor’s collector current can be modeled as:
+<div class="cent">
+<div class="eq-c">
+    <br>
+    I<sub>C</sub>=I<sub>B</sub>*h<sub>FE</sub><br>
+</div>
+</div>
+Thus, the collector current of the Darlington Pair is:
+<div class="cent">
+<div class="eq-c">
+    <br>
+    I<sub>C</sub>≈I<sub>B1</sub>*h<sub>FE(1)</sub>+I<sub>B2</sub>*h<sub>FE(2)</sub><br><br>
+    I<sub>C</sub>≈I<sub>B1</sub>*h<sub>FE(1)</sub>+(I<sub>B1</sub>*h<sub>FE(1)</sub>*h<sub>FE(2)</sub>)<br><br>
+    I<sub>C</sub>≈I<sub>B1</sub>*h<sub>FE(1)</sub>(1+</sub>h<sub>FE(2)</sub>)<br>
+</div>
+</div>
 <br>
-Check back soon for more updates!
-<br>
+The coefficient h_FE for the Darlington Pair can also be expressed as the product of the two amplification 
+coefficients when h<sub>FE(1)</sub>>> 1:
+<div class="cent">
+<div class="eq-c">
+    <br>
+    h<sub>FE</sub>≈h<sub>FE(1)</sub>*h<sub>FE(2)</sub>
+</div>
+</div>
 <br>
 
 <h2>References</h2>
 1) Horowitz, Paul; Hill, Winfield (1989). The Art of Electronics(2nd ed.). Cambridge University Press. pp. 68–69. ISBN 0-521-37095-7.
 <br>
 2) https://www.futurlec.com/Diodes/1N5226.shtml
+<br>
+3) Horowitz, Paul; Hill, Winfield (2015). The Art of Electronics(3rd ed.). Cambridge University Press. p. 72. ISBN 978-0-521-80926-9.
