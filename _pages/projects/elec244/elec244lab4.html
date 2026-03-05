@@ -2,7 +2,30 @@
 layout: splash
 ---
 <style>
-    .credit {
+.cent {
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+.fraction {
+  display: inline-block;
+  vertical-align: middle; 
+  margin: 0 0.2em 0.4ex;
+  text-align: center;
+  & > span{
+    display: block;
+    padding-top: 0.15em;
+  }
+  & span{
+    &.fdn{
+      border-top: thin solid white;
+      
+    }
+    &.bar{
+      display: none;
+    }
+  }
+}
+.credit {
     font-size: x-small;
 }
 </style>
@@ -39,7 +62,36 @@ circuit has a nominal Zener (Breakdown) Voltage of 3.3V at 20 mA. While this val
 is found in practice, it dictates the reference voltage for the rest of the circuit. It is important 
 to note that Zener Diodes often require a bias current. In the circuit diagram shown in Figure 1, the 
 R3, 10 kΩ resistor is required to put the Zener Diode in breakdown mode.
+<br>
+<h3>Error Amplifier</h3>
+The Op-Amp topology is an Error Amplifier. An error amplifier (as the name suggests) amplifies 
+the error (difference) between the non-inverting and inverting input. The op-amp itself wants to keep 
+the voltage between the two inputs. The non-inverting input of the op-amp is the reference voltage of 
+the zener diode divided down by R1 and R2. The inverting input is the feedback from the op-amps output. 
+This means that the output voltage of the op-amp is regulated by the reference voltage and resistor network. 
+Quantitatively, the output voltage is expressed in terms of the Non-Inverting Op-Amp equation.
 
+<div class="cent">
+<div class="eq-c">
+V<sub>out</sub> = V<sub>in</sub>(1+
+  <div class="fraction">
+  <span class="fup">R<sub>f</sub></span>
+  <span class="bar">/</span>
+  <span class="fdn">R</span>
+  </div>)
+</div>
+</div>
+
+<div class="cent">
+<div class="eq-c">
+V<sub>out</sub> = (V<sub>Zener</sub>)(R1 and R2 Network)(1+
+  <div class="fraction">
+  <span class="fup">R<sub>f</sub></span>
+  <span class="bar">/</span>
+  <span class="fdn">R</span>
+  </div>)
+</div>
+</div>
 <br>
 <br>
 Check back soon for more updates!
